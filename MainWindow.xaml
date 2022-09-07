@@ -1,0 +1,30 @@
+﻿<Window x:Class="WSLManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WSLManager"
+        mc:Ignorable="d"
+        Title="Windows Subsystem for Linux マネージャ" Height="450" Width="800">
+    <Grid>
+        <Label x:Name="OSListLabel" Content="インストールされているディストリビューション：" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dataGrid" Margin="10,41,10,0" Height="133" VerticalAlignment="Top" CanUserReorderColumns="False" CanUserSortColumns="False" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="No." Binding="{Binding DistNo}" Width="32"/>
+                <DataGridTextColumn Header="デフォルト" Binding="{Binding DistDefault}" Width="96"/>
+                <DataGridTextColumn Header="ディストリビューション名" Binding="{Binding DistName}" Width="128"/>
+                <DataGridTextColumn Header="WSLバージョン" Binding="{Binding DistWSLVer}" Width="96"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="ShutdownLabel" Content="ディストリビューションのシャットダウン：" HorizontalAlignment="Left" Margin="10,179,0,0" VerticalAlignment="Top"/>
+        <StatusBar Height="32" VerticalAlignment="Bottom">
+            <Label x:Name="StatusBarLabel" Content="準備完了"/>
+        </StatusBar>
+        <ComboBox x:Name="ShutdownComboBox" HorizontalAlignment="Left" Margin="21,210,0,0" VerticalAlignment="Top" Width="161"/>
+        <Button x:Name="ShutdownButton" Content="シャットダウン" HorizontalAlignment="Left" Margin="187,210,0,0" VerticalAlignment="Top" Height="22" Width="72"/>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="259,278,0,0" VerticalAlignment="Top" Click="button_Click"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="475,210,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="315" Height="187"/>
+
+
+    </Grid>
+</Window>
